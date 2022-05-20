@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import AppHeader from "./layout/AppHeader";
+import AppHeaderLanding from "./layout/AppHeaderLanding";
 import AppFooter from "./layout/AppFooter";
 import Components from "./views/Components.vue";
 import Landing from "./views/Landing.vue";
@@ -25,18 +26,8 @@ export default new Router({
       path: "/",
       name: "landing",
       components: {
-        header: AppHeader,
+        header: AppHeaderLanding,
         default: Landing,
-        footer: AppFooter
-      }
-    },
-    
-    {
-      path: "/register",
-      name: "register",
-      components: {
-        header: AppHeader,
-        default: Register,
         footer: AppFooter
       }
     },
@@ -48,7 +39,16 @@ export default new Router({
         default: Profile,
         footer: AppFooter
       }
-    }
+    },
+     {
+      path: "/registra-negocio",
+      name: "registra-negocio",
+      components: {
+        header: AppHeaderLanding,
+        default: Register,
+        footer: AppFooter
+      }
+    },
   ],
   scrollBehavior: to => {
     if (to.hash) {

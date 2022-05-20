@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     token: null,
-    url_base: "http://localhost/reservame/backend/web/index.php/api",
+    url_base: "http://localhost/reservameback/backend/web/index.php/api/v1/",
     //url_base: "url server",
     user: {
       name: '',
