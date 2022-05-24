@@ -20,10 +20,13 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import Argon from "./plugins/argon-kit";
+import vuetify from '@/plugins/vuetify' // path to vuetify export
 
 Vue.config.productionTip = false;
 Vue.use(Argon);
+Vue.use(vuetify);
 new Vue({
+  vuetify,
   router,
   store,
   render: h => h(App)

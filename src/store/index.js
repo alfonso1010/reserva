@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     token: null,
     url_base: "http://localhost/reservameback/backend/web/index.php/api/v1/",
+    url_base_token: "http://localhost/reservameback/backend/web/index.php/api",
     //url_base: "url server",
     user: {
       name: '',
@@ -33,7 +34,7 @@ export default new Vuex.Store({
   actions: {
     async login({ commit, state }, user) {
       try {
-        const res = await fetch(state.url_base + '/oauth2/token', {
+        const res = await fetch(state.url_base_token + '/oauth2/token', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -52,12 +53,37 @@ export default new Vuex.Store({
         console.log('Error: ', error)
       }
     },
+    async checkPerfil({ commit, state }) {
+      try {
+        const res = await fetch(state.url_base + 'perfil', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer '+localStorage.getItem('token')
+          },
+        })
+        const data = await res.json();
+        if(data.rol !== undefined){
+          if(data.rol != "responsable"){
+            commit('logout');
+          }
+        }else{
+          commit('logout');
+        }
+      } catch (error) {
+        console.log('Error: ', error)
+      }
+    },
     getToken({commit}) {
       if(localStorage.getItem('token')) {
         commit('setToken', localStorage.getItem('token'))
       } else {
-        commit('setToken', null)
+        commit('setToken', null);
+        if(router.history.current.path !== "/"){
+          router.push('login');
+        }
       }
+      //console.log("toke:"+localStorage.getItem('token'));
     },
     logout ({ commit }) {
       commit('logout')

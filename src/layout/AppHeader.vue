@@ -15,14 +15,19 @@
             </div>
 
             <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                <li class="nav-item">
+                    <router-link class="nav-link nav-link-icon" to="/perfil">Perfil</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link nav-link-icon" to="/reservaciones">Reservaciones</router-link>
+                </li>
                 <base-dropdown class="nav-item" menu-classes="dropdown-menu-xl">
                     <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
                         <i class="ni ni-ui-04 d-lg-none"></i>
                         <span class="nav-link-inner--text">Mi Negocio</span>
                     </a>
                     <div class="dropdown-menu-inner">
-                        <a href="#"
-                           class="media d-flex align-items-center">
+                        <router-link class="media d-flex align-items-center" to="/negocio">
                             <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
                                 <i class="ni ni-spaceship"></i>
                             </div>
@@ -30,9 +35,8 @@
                                 <h6 class="heading text-primary mb-md-1">Datos de Mi Negocio</h6>
                                 <p class="description d-none d-md-inline-block mb-0">Configura los datos de tu negocio, como dirección, telefono, etc...</p>
                             </div>
-                        </a>
-                        <a href="#"
-                           class="media d-flex align-items-center">
+                        </router-link>
+                        <router-link class="media d-flex align-items-center" to="/licencia">
                             <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                                 <i class="ni ni-ui-04"></i>
                             </div>
@@ -40,22 +44,16 @@
                                 <h5 class="heading text-warning mb-md-1">Licencia</h5>
                                 <p class="description d-none d-md-inline-block mb-0">Aqui puedes consultar los pagos y la vigencia de tu licencia de uso.</p>
                             </div>
-                        </a>
+                        </router-link>
                     </div>
                 </base-dropdown>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-icon"  href="#">
-                        Reservaciones
-                    </a>
-                </li>
                 <base-dropdown class="nav-item" menu-classes="dropdown-menu-xl">
                     <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
                         <i class="ni ni-ui-04 d-lg-none"></i>
                         <span class="nav-link-inner--text">Configuración</span>
                     </a>
                     <div class="dropdown-menu-inner">
-                        <a href="#"
-                           class="media d-flex align-items-center">
+                        <router-link class="media d-flex align-items-center" to="/personaliza-dias">
                             <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
                                 <i class="ni ni-settings"></i>
                             </div>
@@ -63,9 +61,8 @@
                                 <h6 class="heading text-primary mb-md-1">Días Inhabiles</h6>
                                 <p class="description d-none d-md-inline-block mb-0">Aquí podras agregar dias especificos en los que tu negocio no abrirá, por ejemplo si tienes algun compromiso y no abriras un día, podras añadirlo aqui, para que no se puedan hacer reservaciones ese día</p>
                             </div>
-                        </a>
-                        <a href="#"
-                           class="media d-flex align-items-center">
+                        </router-link>
+                        <router-link class="media d-flex align-items-center" to="/personaliza-horario">
                             <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                                 <i class="ni ni-time-alarm"></i>
                             </div>
@@ -73,7 +70,7 @@
                                 <h5 class="heading text-warning mb-md-1">Personalizar Horario</h5>
                                 <p class="description d-none d-md-inline-block mb-0">Aqui puedes personalizar el horario de apetura y cierre de tu negocio de un día especifico por si tienes algun compromiso.</p>
                             </div>
-                        </a>
+                        </router-link>
                     </div>
                 </base-dropdown>
                 <li class="nav-item">

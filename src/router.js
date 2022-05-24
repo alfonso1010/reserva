@@ -8,6 +8,7 @@ import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
 import Register from "./views/Register.vue";
 import Profile from "./views/Profile.vue";
+import Negocio from "./views/Negocio.vue";
 
 Vue.use(Router);
 
@@ -18,6 +19,7 @@ export default new Router({
       path: "/login",
       name: "login",
       components: {
+        header: AppHeaderLanding,
         default: Login,
         footer: AppFooter
       }
@@ -40,12 +42,21 @@ export default new Router({
         footer: AppFooter
       }
     },
-     {
+    {
       path: "/registra-negocio",
       name: "registra-negocio",
       components: {
         header: AppHeaderLanding,
         default: Register,
+        footer: AppFooter
+      }
+    },
+    {
+      path: "/negocio",
+      name: "negocio",
+      components: {
+        header: AppHeader,
+        default: Negocio,
         footer: AppFooter
       }
     },
