@@ -9,6 +9,7 @@ import Login from "./views/Login.vue";
 import Register from "./views/Register.vue";
 import Profile from "./views/Profile.vue";
 import Negocio from "./views/Negocio.vue";
+import Licencia from "./views/Licencia.vue";
 
 Vue.use(Router);
 
@@ -57,6 +58,15 @@ export default new Router({
       components: {
         header: AppHeader,
         default: Negocio,
+        footer: AppFooter
+      }
+    },
+    {
+      path: "/licencia",
+      name: "licencia",
+      components: {
+        header: AppHeader,
+        default: Licencia,
         footer: AppFooter
       }
     },

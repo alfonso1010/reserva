@@ -18,7 +18,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-3 order-lg-2">
                                 <div class="card-profile-image">
-                                    <img v-lazy="'img/brand/barberia.jpeg'" class="rounded-circle">
+                                    <img v-lazy="ruta_imagen" class="rounded-circle">
                                 </div>
                             </div>
                             <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
@@ -87,6 +87,7 @@ export default {
                 direccionNegocio:"-",
                 telefonoNegocio:"-",
                 responsableNegocio:"-",
+                ruta_imagen: ''
                 
             }
         },
@@ -104,6 +105,9 @@ export default {
                         this.direccionNegocio = "-";
                         this.telefonoNegocio = datos.negocio.telefono_celular;
                         this.responsableNegocio = datos.negocio.responsable;
+                        if (datos.negocio.foto_fachada.length > 0) {
+                            this.ruta_imagen = this.$store.state.url_imagen+datos.negocio.foto_fachada;
+                        }
                     }
                   })
                  .catch((error) => {

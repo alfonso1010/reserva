@@ -21,10 +21,16 @@ import router from "./router";
 import store from "./store";
 import Argon from "./plugins/argon-kit";
 import vuetify from '@/plugins/vuetify' // path to vuetify export
+import "vue-easytable/libs/theme-default/index.css";
+import VueEasytable from "vue-easytable";
+import { VePagination } from "vue-easytable";
+
 
 Vue.config.productionTip = false;
 Vue.use(Argon);
 Vue.use(vuetify);
+Vue.use(VueEasytable);
+Vue.use(VePagination);
 new Vue({
   vuetify,
   router,

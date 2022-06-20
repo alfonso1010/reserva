@@ -51,4 +51,10 @@ export default {
 .v-select__slot{
   margin-top: 20px;
 }
+.success {
+    color: green
+}
+.error {
+    color: red
+}
 </style>
